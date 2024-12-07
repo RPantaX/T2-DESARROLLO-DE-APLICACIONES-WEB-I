@@ -9,9 +9,13 @@ import pe.edu.cibertec.DAAI_T2_PantaJefferson.service.MedicoService;
 
 @Controller
 @RequestMapping("/Medico")
-@RequiredArgsConstructor
 public class MedicoController {
     public final MedicoService service;
+
+    public MedicoController(MedicoService service) {
+        this.service = service;
+    }
+
     @GetMapping
     public String index(Model model) {
         model.addAttribute("medicos", service.getAllMedicos());

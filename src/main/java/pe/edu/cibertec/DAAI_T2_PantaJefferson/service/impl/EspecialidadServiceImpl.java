@@ -9,10 +9,13 @@ import pe.edu.cibertec.DAAI_T2_PantaJefferson.service.EspecialidadService;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class EspecialidadServiceImpl implements EspecialidadService {
 
     private final EspecialidadRepository especialidadRepository;
+
+    public EspecialidadServiceImpl(EspecialidadRepository especialidadRepository) {
+        this.especialidadRepository = especialidadRepository;
+    }
 
     @Override
     public List<Especialidad> getAllEspecialidades() {

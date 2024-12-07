@@ -10,10 +10,13 @@ import java.util.List;
 
 
 @Service
-@RequiredArgsConstructor
 public class MedicoServiceImpl implements MedicoService {
 
     private final MedicoRepository medicoRepository;
+
+    public MedicoServiceImpl(MedicoRepository medicoRepository) {
+        this.medicoRepository = medicoRepository;
+    }
 
     @Override
     public List<Medico> getAllMedicos() {
