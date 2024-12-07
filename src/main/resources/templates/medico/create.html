@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Registro de Médico</title>
+</head>
+<body>
+<nav th:insert="~{layout::menu}"></nav>
+<br />
+<div class="card">
+    <div class="card-header text-bg-secondary">
+        Registro de Médico
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Registro de Nuevo Médico</h5>
+        <hr />
+        <form th:action="@{/Medico/save}" method="post" th:object="${medico}">
+            <div class="form-floating mb-3">
+                <input
+                        type="text"
+                        class="form-control"
+                        id="txtnomMedico"
+                        th:field="*{nomMedico}"
+                        placeholder="Nombre del Médico"
+                        required
+                        minlength="3"
+                        maxlength="100">
+                <label for="txtnomMedico">Nombre del Médico</label>
+                <div class="invalid-feedback">El nombre es obligatorio y debe tener entre 3 y 100 caracteres.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                        type="text"
+                        class="form-control"
+                        id="txtapeMedico"
+                        th:field="*{apeMedico}"
+                        placeholder="Apellido del Médico"
+                        required
+                        minlength="3"
+                        maxlength="100">
+                <label for="txtapeMedico">Apellido del Médico</label>
+                <div class="invalid-feedback">El apellido es obligatorio y debe tener entre 3 y 100 caracteres.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                        type="date"
+                        class="form-control"
+                        id="txtfechaNacMedico"
+                        th:field="*{fechaNacMedico}"
+                        required>
+                <label for="txtfechaNacMedico">Fecha de Nacimiento</label>
+                <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar Médico</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
