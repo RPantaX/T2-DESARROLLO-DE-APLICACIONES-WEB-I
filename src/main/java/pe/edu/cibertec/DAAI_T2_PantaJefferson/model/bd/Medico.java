@@ -13,12 +13,8 @@ import java.util.Date;
 public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdMedico")
-    private Integer idMedico;
-    @Column(name = "NomMedico")
-    private String nomMedico;
-    @Column(name = "ApeMedico")
-    private String apeMedico;
-    @Column(name = "FechNacMedico")
-    private Date fechaNacMedico;
+    private Integer idmedico;
+    private String nommedico;
+    private String apemedico;
+    private Date fechancmedico;
 }

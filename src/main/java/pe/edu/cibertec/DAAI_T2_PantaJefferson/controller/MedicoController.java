@@ -8,7 +8,7 @@ import pe.edu.cibertec.DAAI_T2_PantaJefferson.model.bd.Medico;
 import pe.edu.cibertec.DAAI_T2_PantaJefferson.service.MedicoService;
 
 @Controller
-@RequestMapping("/Medico")
+@RequestMapping("/medico")
 public class MedicoController {
     public final MedicoService service;
 

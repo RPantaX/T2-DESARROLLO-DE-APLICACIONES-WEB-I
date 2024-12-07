@@ -13,15 +13,11 @@ import java.util.Date;
 public class Especialidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdEspecialidad")
-    private Integer idEspecialidad;
-    @Column(name = "Titulo")
+    private Integer idespecialidad;
     private String titulo;
-    @Column(name = "Funcion")
     private String funcion;
-    @Column(name = "FechGraduacion")
-    private Date fechGraduacion;
+    private Date fechgraduacion;
     @ManyToOne
-    @JoinColumn(name = "IdMedico")
+    @JoinColumn(name = "Idmedico")
     private Medico medico;
 }

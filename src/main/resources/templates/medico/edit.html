@@ -14,16 +14,16 @@
     <div class="card-body">
         <h5 class="card-title">Actualizar Médico</h5>
         <hr />
-        <form th:action="@{/Medico/save}" method="post" th:object="${medico}">
+        <form th:action="@{/medico/save}" method="post" th:object="${medico}">
             <!-- Campo oculto para el ID -->
-            <input type="hidden" th:field="*{idMedico}" />
+            <input type="hidden" th:field="*{idmedico}" />
 
             <div class="form-floating mb-3">
                 <input
                         type="text"
                         class="form-control"
                         id="txtnomMedico"
-                        th:field="*{nomMedico}"
+                        th:field="*{nommedico}"
                         placeholder="Nombre del Médico"
                         required
                         minlength="3"
@@ -37,7 +37,7 @@
                         type="text"
                         class="form-control"
                         id="txtapeMedico"
-                        th:field="*{apeMedico}"
+                        th:field="*{apemedico}"
                         placeholder="Apellido del Médico"
                         required
                         minlength="3"
@@ -51,7 +51,7 @@
                         type="date"
                         class="form-control"
                         id="txtfechaNacMedico"
-                        th:field="*{fechaNacMedico}"
+                        th:field="*{fechancmedico}"
                         required>
                 <label for="txtfechaNacMedico">Fecha de Nacimiento</label>
                 <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>

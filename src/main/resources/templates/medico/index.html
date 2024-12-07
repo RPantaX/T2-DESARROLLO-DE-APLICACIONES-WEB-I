@@ -5,41 +5,41 @@
     <title>Gestión de Médicos</title>
 </head>
 <body>
-<nav th:insert="~{layout::menu}"></nav>
-<br />
-<div class="card">
-    <div class="card-header text-bg-secondary">
-        Gestión de Médicos
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Lista de Médicos</h5>
-        <a th:href="@{/Medico/create}" class="btn btn-primary">Crear Nuevo Médico</a>
+    <nav th:insert="~{layout::menu}"></nav>
+    <br />
+    <div class="card">
+        <div class="card-header text-bg-secondary">
+            Gestión de Médicos
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Lista de Médicos</h5>
+            <a th:href="@{/medico/create}" class="btn btn-primary">Crear Nuevo Médico</a>
 
-        <hr />
+            <hr />
 
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Fecha de Nacimiento</th>
-                <th scope="col">Editar</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="medico : ${medicos}">
-                <th scope="row" th:text="${medico.idMedico}"></th>
-                <td th:text="${medico.nomMedico}"></td>
-                <td th:text="${medico.apeMedico}"></td>
-                <td th:text="${#dates.format(medico.fechaNacMedico, 'yyyy-MM-dd')}"></td>
-                <td>
-                    <a th:href="@{/Medico/edit/{id}(id=${medico.idMedico})}" class="btn btn-warning">Editar</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Fecha de Nacimiento</th>
+                    <th scope="col">Editar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="medico : ${medicos}">
+                    <th scope="row" th:text="${medico.idmedico}"></th>
+                    <td th:text="${medico.nommedico}"></td>
+                    <td th:text="${medico.apemedico}"></td>
+                    <td th:text="${#dates.format(medico.fechancmedico, 'yyyy-MM-dd')}"></td>
+                    <td>
+                        <a th:href="@{/medico/edit/{id}(id=${medico.idmedico})}" class="btn btn-warning">Editar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </body>
 </html>
